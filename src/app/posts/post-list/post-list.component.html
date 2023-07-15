@@ -1,14 +1,16 @@
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel *ngFor="let item of posts">
     <mat-expansion-panel-header>
-      {{item.title}}
+      {{ item.title }}
     </mat-expansion-panel-header>
     <p>
-      {{item.content}}
+      {{ item.content }}
     </p>
     <mat-action-row>
       <button mat-raised-button>Edit</button>
-      <button mat-raised-button color="warn">Delete</button>
+      <button mat-raised-button color="warn" (click)="onDelete(item.id)">
+        Delete
+      </button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
